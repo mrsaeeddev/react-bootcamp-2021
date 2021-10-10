@@ -1,12 +1,17 @@
 import React from 'react';
+import Card from './Card';
 
 function DashBoard() {
-    const [dashboardText, setDashboardText] = React.useState("DashBoard");
+    let initialValue = "DashBoard"
+    const [dashboardText, setDashboardText] = React.useState(initialValue);
 
-    return (<div>
-        {dashboardText}
-        <button onClick={() => setDashboardText('Dashboard')}>Click</button>
-    </div>)
+    return (
+        <div>
+            {dashboardText}
+            <button onClick={() => setDashboardText('Saeed')}>Click</button>
+            <Card name={dashboardText} />
+        </div>
+    )
 }
 
 export default DashBoard;
