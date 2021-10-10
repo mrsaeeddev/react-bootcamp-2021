@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
+import { Table} from 'react-bootstrap';
 
 function BooksList() {
     const [booksList, setBooksList] = React.useState([]);
@@ -12,14 +13,31 @@ function BooksList() {
     },[]);
 
     return (
-    <div>
+        <div>
         <NavBar />
-        <div>{booksList.map((v,i)=>{
-            return (<div>
-                    <div>{v.title}</div>
-                    <div>{v.releaseDate}</div>
-                    </div>)
-        })}</div>
+        <div>
+        <br />
+        <h3>Books Listing</h3>
+        <Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Pages</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+  <tbody>{booksList.map((v,i)=>{
+            return (
+    <tr>
+      <td>{i+1}</td>
+      <td>{v.title}</td>
+      <td>{v.pages}</td>
+      <td>{v.releaseDate}</td>
+    </tr>)})}
+    </tbody>
+</Table>
+    </div>
     </div>
     )
 }
