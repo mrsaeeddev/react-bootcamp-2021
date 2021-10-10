@@ -1,6 +1,7 @@
 import logo from './logo.png';
+import { Button } from 'react-bootstrap';
 import './App.css';
-import DashBoard from './components/DashBoard';
+
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <p>
         A library management application
         </p>
-        <DashBoard />
+        <Button variant="primary">Enter</Button>
       </header>
     </div>
   );
